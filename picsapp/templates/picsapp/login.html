@@ -2,7 +2,8 @@
 
 {% block body %}
 <div class="bg">{% include 'navbar.html' %}</div>
-<div class="container">
+<div class="content-section">
+    <h1 class="text-center title">Sign In</h1>
     <form class="form-group">
         <div class="row mb-3">
             <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
@@ -28,11 +29,10 @@
         </div>
         <button type="submit" class="btn btn-primary">Sign in</button>
     </form>
-</div>
-
-<div class="border-top pt-3">
-    <small class="text-muted">
-        Don't have an Account? <a class="ml-2" href=" ">Sign Up Now</a>
-    </small>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            Don't have an Account? <a class="ml-2" href=" ">Sign Up Now</a>
+        </small>
+    </div>
 </div>
 {% endblock %}
