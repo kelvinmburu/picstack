@@ -22,3 +22,11 @@ def main(request):
 def post(request):
     context = {}
     return render(request, 'picsapp/post_detail.html')
+
+def tag(request):
+    context = {}
+    return render(request, 'picsapp/tag.html')
+
+def profile(request):
+    context = {}
+    return render(request, 'picsapp/profile.html')
