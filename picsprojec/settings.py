@@ -76,9 +76,11 @@ WSGI_APPLICATION = 'picsprojec.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+      'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'picstack',
+        'USER': 'postgres',
+        'PASSWORD':'mburu',
     }
 }
 
@@ -131,3 +133,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'login'
+LOGIN_URL = '/user/login/'
