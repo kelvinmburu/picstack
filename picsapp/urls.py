@@ -1,12 +1,9 @@
 from django.urls import path
-from . import views
+from picsapp.views import Signup,EditProfile
+from django.contrib.auth import views as authViews 
 
 urlpatterns = [
-    path('', views.home, name='home'),
-    path('login/', views.login, name='login'),
-    path('register/', views.register, name='register'),
-    # path('main/', views.main, name='main'),
-    path('post/', views.post, name='post'),
-    path('tag/', views.tag, name='tag'),
-    path('profile/', views.profile, name='profile')
+    path('login/', authViews.LoginView.as_view(template_name='picsapp/login.html'), name='login'),
+    path('signup/', Signup, name='signup'),
+    path('profile/edit', EditProfile, name='edit-profile'),
 ]

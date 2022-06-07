@@ -13,7 +13,6 @@
                     <div class="field">
                         <p class="control has-icons-left has-icons-right">
                             <label class="label is-medium">Username</label>
-                            <input class="input" type="" placeholder="Username">
                             {{ form.username }}
                             <span class="icon is-small is-left">
                                 <i class="fas fa-envelope"></i>
@@ -24,7 +23,6 @@
                     <div class="field">
                         <p class="control has-icons-left">
                             <label class="label is-medium">Password</label>
-                            <input class="input" type="password" placeholder="Password">
                             {{ form.password }}
                             <span class="icon is-small is-left">
                                 <i class="fas fa-lock"></i>
@@ -49,7 +47,7 @@
                     </div>
                     <input type="hidden" name="next" value="{{ next }}">
                     <p><strong>OR</strong></p>
-                    <a href="{% url 'register' %}" class="button is-info is-rounded" style="text-decoration: none;">Create Account</a>
+                    <a href="{% url 'signup' %}" class="button is-info is-rounded" style="text-decoration: none;">Create Account</a>
                 </form>
             </div>
 
