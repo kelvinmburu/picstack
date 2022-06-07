@@ -3,65 +3,68 @@
 
 {% block body %}
 {% include 'navbar.html' %}
-<div class="content-section">
-    <h1 class="text-center title">Sign Up</h1>
-    <div class="field">
-        <label class="label">Name</label>
-        <div class="control">
-            <input class="input" type="text" placeholder="Text input">
-        </div>
-    </div>
 
-    <div class="field">
-        <label class="label">Username</label>
-        <div class="control has-icons-left has-icons-right">
-            <input class="input is-success" type="text" placeholder="Text input" value="">
-            <span class="icon is-small is-left">
-                <i class="fas fa-user"></i>
-            </span>
-            <span class="icon is-small is-right">
-                <i class="fas fa-check"></i>
-            </span>
-        </div>
-        <p class="help is-success">This username is available</p>
-    </div>
+<div class="columns is-mobile has-text-centered">
+    <div class="column is-half is-offset-one-quarter">
 
-    <div class="field">
-        <label class="label">Email</label>
-        <div class="control has-icons-left has-icons-right">
-            <input class="input is-danger" type="email" placeholder="Email input" value="">
-            <span class="icon is-small is-left">
-                <i class="fas fa-envelope"></i>
-            </span>
-            <span class="icon is-small is-right">
-                <i class="fas fa-exclamation-triangle"></i>
-            </span>
+        <div class="card">
+            <div class="card-content">
+                <form method="post" action="" role="form">
+                    {% csrf_token %}
+                    <legend class="border-bottom mb-3 title is-3">Create Account</legend>
+                    <div class="field">
+                        <p class="control has-icons-left has-icons-right">
+                            <label class="label is-medium">Username</label>
+                            {{ form.username }}
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control has-icons-left has-icons-right">
+                            <label class="label is-medium">Email</label>
+                            {{ form.email }}
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control has-icons-left has-icons-right">
+                            <label class="label is-medium">Password</label>
+                            {{ form.password }}
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control has-icons-left has-icons-right">
+                            <label class="label is-medium">Confirm Password</label>
+                            {{ form.confirm_password }}
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <span style="color: red; font-weight: bold;">{{ form.errors }}</span>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <p class="control">
+                            <button type="submit" name="action" class="button is-success">
+                                Register
+                            </button>
+                        </p>
+                    </div>
+                    <p><strong>Already have an account?</strong></p>
+                    <a href="{% url 'login' %}" class="button is-info is-rounded" style="text-decoration: none;">Sign In</a>
+                </form>
+            </div>
         </div>
-        <p class="help is-danger">This email is invalid</p>
-    </div>
-
-    <div class="field">
-        <div class="control">
-            <label class="checkbox">
-                <input type="checkbox">
-                I agree to the <a href="#">terms and conditions</a>
-            </label>
-        </div>
-    </div>
-
-    <div class="field is-grouped">
-        <div class="control">
-            <button class="button is-link">Submit</button>
-        </div>
-        <div class="control">
-            <button class="button is-link is-light">Cancel</button>
-        </div>
-    </div>
-
-    <div class="border-top pt-3">
-        <small class="text-muted">
-            Already Have an Account? <a class="ml-2" href="#">Sign In</a>
-        </small>
     </div>
 </div>
 
