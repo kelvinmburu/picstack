@@ -15,9 +15,9 @@ def register(request):
     context = {}
     return render(request, 'picsapp/register.html')
 
-def main(request):
-    context = {}
-    return render(request, 'picsapp/main.html')
+# def main(request):
+#     context = {}
+#     return render(request, 'picsapp/main.html')
 
 def post(request):
     context = {}
