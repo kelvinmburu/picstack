@@ -2,37 +2,60 @@
 
 {% block body %}
 <div class="bg">{% include 'navbar.html' %}</div>
-<div class="content-section">
-    <h1 class="text-center main-title">Sign In</h1>
-    <form class="form-group">
-        <div class="row mb-3">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-            <div class="col-sm-10">
-                <input type="email" class="form-control" id="inputEmail3">
+<br>
+<div class="columns is-mobile has-text-centered">
+    <div class="column is-half is-offset-one-quarter">
+
+        <div class="card">
+            <div class="card-content">
+                <form method="post" action="" role="form">
+                    {% csrf_token %}
+                    <legend class="border-bottom mb-3 title is-3">Login</legend>
+                    <div class="field">
+                        <p class="control has-icons-left has-icons-right">
+                            <label class="label is-medium">Username</label>
+                            <input class="input" type="" placeholder="Username">
+                            {{ form.username }}
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="field">
+                        <p class="control has-icons-left">
+                            <label class="label is-medium">Password</label>
+                            <input class="input" type="password" placeholder="Password">
+                            {{ form.password }}
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                        </p>
+                    </div>
+
+                    {% if form.errors %}
+                    <div class="row">
+                        <div class="col s12">
+                            <span style="color: red; font-weight: bold;">Your username or password did not match.</span>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    <div class="field">
+                        <p class="control">
+                            <button type="submit" value="login" class="button is-success">
+                                Login
+                            </button>
+                        </p>
+                    </div>
+                    <input type="hidden" name="next" value="{{ next }}">
+                    <p><strong>OR</strong></p>
+                    <a class="button is-info is-rounded" style="text-decoration: none;">Create Account</a>
+                </form>
             </div>
+
         </div>
-        <div class="row mb-3">
-            <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-            <div class="col-sm-10">
-                <input type="password" class="form-control" id="inputPassword3">
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-sm-10 offset-sm-2">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1">
-                    <label class="form-check-label" for="gridCheck1">
-                        Remember Me
-                    </label>
-                </div>
-            </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Sign in</button>
-    </form>
-    <div class="border-top pt-3">
-        <small class="text-muted">
-            Don't have an Account? <a class="ml-2" href=" ">Sign Up Now</a>
-        </small>
+
     </div>
 </div>
 {% endblock %}
