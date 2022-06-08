@@ -8,8 +8,8 @@ This is a Django personal gallery application that displays my photos for others
 To access the admin dashboard, follow the instructions below:
 
 * Navigate to `https://picstackone.herokuapp.com/admin`
-* Username: `kelvin`
-* Password: `ruut@321`
+* Username: `test`
+* Password: `test#478`
 
 ## Project Run-Through
 * A few details about this project:
