@@ -2,7 +2,7 @@
 
 This is a Django personal gallery application that displays my photos for others to see.
 
-![Site Screenshot]()
+![Site Screenshot](static/img/Picstack.png)
 
 ## Project Run-Through
 * A few details about this project:
