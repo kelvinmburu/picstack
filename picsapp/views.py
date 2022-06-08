@@ -16,6 +16,10 @@ from django.core.paginator import Paginator
 from django.urls import resolve
 # Create your views here.
 
+def home(request):
+    context = {}
+    return render(request, 'picsapp/index.html', context)
+    
 
 def UserProfile(request, username):
 

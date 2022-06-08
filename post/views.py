@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.template import loader
 from django.http import HttpResponse
 
@@ -18,12 +18,24 @@ def index(request):
     for post in posts:
         groups_id.append(post.post_id)
         
-    post_items = Post.objects.filter(id__in=groups_id).all().order_by('posted')
+    post_items = Post.objects.filter(id__in=groups_id).all().order_by('-posted')
     
     template = loader.get_template('picsapp/main.html')
     
     context = {
         'post_items': post_items,
+    }
+    
+    return HttpResponse(template.render(context, request))
+
+@login_required
+def PostDetails(request):
+    post = get_object_or_404(Post, id=post.id)
+    
+    template = loader.get_template('picsapp/post_detail.html')
+    
+    context = {
+        'post': post,
     }
     
     return HttpResponse(template.render(context, request))
@@ -58,5 +70,16 @@ def NewPost(request):
     context = {'form': form,}
     return render(request, 'picsapp/newpost.html', context)
     
-
-    
+@login_required
+def tags(request, tag_slug):
+     tag = get_object_or_404(Tag, slug=tag_slug)
+     posts = Post.objects.filter(tags=tag).order_by('-posted')
+     
+     template = loader.get_template('picsapp/tag.html')
+     
+     context = {
+         'posts': posts,
+         'tag': tag
+     }
+     
+     return HttpResponse(template.render(context, request))
