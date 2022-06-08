@@ -4,6 +4,13 @@ This is a Django personal gallery application that displays my photos for others
 
 ![Site Screenshot](static/img/picstack.png)
 
+# Django Admin Login
+To access the admin dashboard, follow the instructions below:
+
+* Navigate to `https://picstackone.herokuapp.com/admin`
+* Username: `kelvin`
+* Password: `ruut@321`
+
 ## Project Run-Through
 * A few details about this project:
 
