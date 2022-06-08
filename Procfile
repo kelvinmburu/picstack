@@ -1,2 +1,2 @@
-web: gunicorn picprojec.wsgi
+web: gunicorn picsprojec.wsgi
 release: python manage.py migrate
